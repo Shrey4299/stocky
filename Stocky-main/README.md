@@ -31,8 +31,42 @@ working of the market.
 - Real Time Refreshes
 - Fully functional User Login system
 
+## Methodology
 
+```mermaid
+graph LR;
+    A(SHORTLISTING TOP </br> 50 COMPANIES)-->B(SCRAPING THEIR </br> MARKET PRICES </br> FROM NSE);
+    B-->C(USER JOINS </br> THE GAME AND </br> LOGS IN);
+    C-->D(THE PRICES </br> ARE DISPLAYED IN </br> THE MARKETPLACE);
+    D-->E(USER USES </br> VIRTUAL MONEY </br> TO BUY STOCKS);
+    E-->F(MARKET </br> REFRESHES);
+    F-->G(USER INCURS </br> EITHER A PROFIT </br> OR A LOSS);
+```
 
+## User Sign In process
+``` mermaid
+flowchart LR
+    A(User lands on </br> the home page) ==> B[Users chooses to </br> create or joun a game]
+    B ==> C[A unique ID is </br> generated for the user]
+    C ==> D{User's entered </br> credentials are right?}
+    D -->|No| E[The ID already </br> redistered, but one of </br> the entered credentials </br> isn't correct]
+    E ==> A
+    D -->|Yes| F[User Sign In </br> is succesfull]
+```
+
+## Game process
+``` mermaid
+flowchart LR
+    A(User </br> Sign In is </br>  succesfull) ==> B{Balance is 0}
+    B -->|Yes| C[Bring back </br> to main menu]
+    B -->|No| D[Take input of </br> the company name, </br> amount and operation]
+    D ==> E{Does user </br> want to buy or </br> sell that amount}
+    E -->|Sell| F[Decrease the </br> amount of stocks user </br> has for that company, </br> add the amount to </br>  user's balance]
+    E -->|Buy| G[Increase the amount </br> of stocks user has for that </br> company and decrease the </br> amount spent from </br> user's balance]
+    G ==> H[Stock market </br>  updates and the </br>  game starts again]
+    F ==> H
+    H ==> B
+```
 ## User Interface (Screenshots)
 
 <section>
